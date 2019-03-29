@@ -1,0 +1,4 @@
+proto: struct thread *td, struct thr_wake_args *uap
+parms: td, uap
+errors:
+profiles:

@@ -1,0 +1,4 @@
+proto: struct thread *td, struct symlinkat_args *uap
+parms: td, uap
+errors:
+profiles:

@@ -1,0 +1,4 @@
+proto: struct thread *td, struct ksem_init_args *uap
+parms: td, uap
+errors:
+profiles:

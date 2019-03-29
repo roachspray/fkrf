@@ -1,0 +1,4 @@
+proto: struct thread *td, struct rctl_remove_rule_args *uap
+parms: td, uap
+errors:
+profiles:

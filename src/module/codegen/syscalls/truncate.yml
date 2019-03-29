@@ -1,0 +1,4 @@
+proto: struct thread *td, struct truncate_args *uap
+parms: td, uap
+errors:
+profiles:

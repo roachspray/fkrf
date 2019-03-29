@@ -1,0 +1,4 @@
+proto: struct thread *td, struct thr_set_name_args *uap
+parms: td, uap
+errors:
+profiles:

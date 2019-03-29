@@ -1,0 +1,4 @@
+proto: struct thread *td, struct sched_rr_get_interval_args *uap
+parms: td, uap
+errors:
+profiles:

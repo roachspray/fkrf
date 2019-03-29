@@ -1,0 +1,4 @@
+proto: struct thread *td, struct sched_getparam_args *uap
+parms: td, uap
+errors:
+profiles:

@@ -1,0 +1,4 @@
+proto: struct thread *td, struct sched_get_priority_max_args *uap
+parms: td, uap
+errors:
+profiles:

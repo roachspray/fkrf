@@ -1,0 +1,4 @@
+proto: struct thread *td, struct freebsd11_lstat_args *uap
+parms: td, uap
+errors:
+profiles:

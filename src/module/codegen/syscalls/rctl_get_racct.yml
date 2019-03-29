@@ -1,0 +1,4 @@
+proto: struct thread *td, struct rctl_get_racct_args *uap
+parms: td, uap
+errors:
+profiles:
