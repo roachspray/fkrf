@@ -5,4 +5,4 @@ errors:
   - ENOMEM
   - ENOSYS
 profiles:
-  - proce
+  - proc

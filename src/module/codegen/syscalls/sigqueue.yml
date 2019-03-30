@@ -1,4 +1,7 @@
 proto: struct thread *td, struct sigqueue_args *uap
 parms: td, uap
 errors:
-profiles:
+  - EAGAIN
+  - EINVAL
+  - EPERM
+  - ESRCH

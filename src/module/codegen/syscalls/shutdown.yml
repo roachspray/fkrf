@@ -1,4 +1,7 @@
 proto: struct thread *td, struct shutdown_args *uap
 parms: td, uap
 errors:
-profiles:
+  - EBADF
+  - EINVAL
+  - ENOTCONN
+  - ENOTSOCK

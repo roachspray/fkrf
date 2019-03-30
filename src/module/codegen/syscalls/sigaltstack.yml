@@ -1,4 +1,7 @@
 proto: struct thread *td, struct sigaltstack_args *uap
 parms: td, uap
 errors:
-profiles:
+  - EFAULT
+  - EPERM
+  - EINVAL
+  - ENOMEM

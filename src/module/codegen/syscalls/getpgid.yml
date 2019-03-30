@@ -1,4 +1,4 @@
 proto: struct thread *td, struct getpgid_args *uap
 parms: td, uap
 errors:
-profiles:
+  - ESRCH
