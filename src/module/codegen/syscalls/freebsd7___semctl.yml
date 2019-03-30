@@ -1,4 +1,0 @@
-proto: struct thread *td, struct freebsd7___semctl_args *uap
-parms: td, uap
-errors:
-profiles:

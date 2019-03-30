@@ -1,4 +1,6 @@
 proto: struct thread *td, struct setgroups_args *uap
 parms: td, uap
 errors:
-profiles:
+  - EPERM
+  - EINVAL
+  - EFAULT

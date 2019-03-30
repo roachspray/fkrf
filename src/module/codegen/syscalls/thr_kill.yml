@@ -1,4 +1,0 @@
-proto: struct thread *td, struct thr_kill_args *uap
-parms: td, uap
-errors:
-profiles:
