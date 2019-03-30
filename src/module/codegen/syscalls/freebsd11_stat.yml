@@ -1,4 +1,13 @@
 proto: struct thread *td, struct freebsd11_stat_args *uap
 parms: td, uap
 errors:
+  - EACCES
+  - EFAULT
+  - EIO
+  - ELOOP
+  - ENAMETOOLONG
+  - ENOENT
+  - ENOTDIR
+  - EOVERFLOW
 profiles:
+  - fs

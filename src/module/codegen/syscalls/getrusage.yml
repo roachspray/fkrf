@@ -1,4 +1,5 @@
 proto: struct thread *td, struct getrusage_args *uap
 parms: td, uap
 errors:
-profiles:
+  - EINVAL
+  - EFAULT
