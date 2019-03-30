@@ -1,4 +1,6 @@
 proto: struct thread *td, struct modstat_args *uap
 parms: td, uap
 errors:
-profiles:
+  - ENOENT
+  - EINVAL
+  - EFAULT

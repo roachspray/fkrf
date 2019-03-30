@@ -1,4 +1,5 @@
 proto: struct thread *td, struct getrlimit_args *uap
 parms: td, uap
 errors:
-profiles:
+  - EFAULT
+  - EPERM

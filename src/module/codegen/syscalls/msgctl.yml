@@ -1,4 +1,7 @@
 proto: struct thread *td, struct msgctl_args *uap
 parms: td, uap
 errors:
-profiles:
+  - EPERM
+  - EACCES
+  - EINVAL
+  - EFAULT

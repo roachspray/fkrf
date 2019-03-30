@@ -1,4 +1,5 @@
 proto: struct thread *td, struct getresuid_args *uap
 parms: td, uap
 errors:
-profiles:
+  - EPERM
+  - EFAULT

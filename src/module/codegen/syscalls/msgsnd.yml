@@ -1,4 +1,8 @@
 proto: struct thread *td, struct msgsnd_args *uap
 parms: td, uap
 errors:
-profiles:
+  - EINVAL
+  - EACCES
+  - EAGAIN
+  - EFAULT
+  - EINTR

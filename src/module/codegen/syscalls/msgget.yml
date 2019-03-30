@@ -1,4 +1,7 @@
 proto: struct thread *td, struct msgget_args *uap
 parms: td, uap
 errors:
-profiles:
+  - EACCES
+  - EEXIST
+  - ENOSPC
+  - ENOENT
