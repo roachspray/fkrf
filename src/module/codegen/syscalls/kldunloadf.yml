@@ -1,4 +1,0 @@
-proto: struct thread *td, struct kldunloadf_args *uap
-parms: td, uap
-errors:
-profiles:

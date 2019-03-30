@@ -1,4 +1,5 @@
 proto: struct thread *td, struct sctp_generic_recvmsg_args *uap
 parms: td, uap
 errors:
-profiles:
+  - EBADF
+  - ENOTSOCK

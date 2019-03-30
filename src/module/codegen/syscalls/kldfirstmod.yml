@@ -1,4 +1,0 @@
-proto: struct thread *td, struct kldfirstmod_args *uap
-parms: td, uap
-errors:
-profiles:
