@@ -1,4 +1,7 @@
 proto: struct thread *td, struct setlogin_args *uap
 parms: td, uap
 errors:
-profiles:
+  - EFAULT
+  - EINVAL
+  - EPERM
+  - ERANGE
