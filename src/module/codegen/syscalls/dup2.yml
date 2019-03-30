@@ -2,4 +2,3 @@ proto: struct thread *td, struct dup2_args *uap
 parms: td, uap
 errors:
   - EBADF
-  - EMFILE
