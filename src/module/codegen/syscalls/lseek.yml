@@ -1,4 +1,8 @@
 proto: struct thread *td, struct lseek_args *uap
 parms: td, uap
 errors:
-profiles:
+  - EBADF
+  - EINVAL
+  - ENXIO
+  - EOVERFLOW
+  - ESPIPE

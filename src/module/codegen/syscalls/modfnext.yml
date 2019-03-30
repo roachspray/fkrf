@@ -1,4 +1,0 @@
-proto: struct thread *td, struct modfnext_args *uap
-parms: td, uap
-errors:
-  - ENOENT

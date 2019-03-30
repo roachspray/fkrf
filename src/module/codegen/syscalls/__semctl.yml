@@ -1,4 +1,5 @@
 proto: struct thread *td, struct __semctl_args *uap
 parms: td, uap
 errors:
-profiles:
+  - EINVAL
+  - EFAULT

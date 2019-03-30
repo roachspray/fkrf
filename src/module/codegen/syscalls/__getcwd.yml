@@ -1,4 +1,6 @@
 proto: struct thread *td, struct __getcwd_args *uap
 parms: td, uap
 errors:
-profiles:
+  - ENODEV
+  - EINVAL
+  - EFAULT
