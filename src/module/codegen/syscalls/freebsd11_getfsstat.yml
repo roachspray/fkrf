@@ -1,8 +1,0 @@
-proto: struct thread *td, struct freebsd11_getfsstat_args *uap
-parms: td, uap
-errors:
-  - EFAULT
-  - EINVAL
-  - EIO
-profiles:
-  - fs

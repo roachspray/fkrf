@@ -1,8 +1,0 @@
-proto: struct thread *td, struct freesd11_fstatfs_args *uap
-parms: td, uap
-errors:
-  - EBADF
-  - EFAULT
-  - EIO
-profiles:
-  - fs

@@ -3,7 +3,7 @@ parms: td, uap
 errors:
   - EAGAIN
   - EBADF
-  - EDEADLKK
+  - EDEADLK
   - EINTR
   - EINVAL
   - EMFILE

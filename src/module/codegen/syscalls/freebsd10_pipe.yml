@@ -1,9 +1,0 @@
-proto: struct thread *td, struct freebsd10_pipe_args *uap
-parms: td, uap
-errors:
-  - EFAULT
-  - EMFILE
-  - ENFILE
-  - ENOMEM
-profiles:
-  - ipc

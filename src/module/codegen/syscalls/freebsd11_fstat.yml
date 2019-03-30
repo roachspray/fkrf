@@ -1,9 +1,0 @@
-proto: struct thread *td, struct freebsd11_fstat_args *uap
-parms: td, uap
-errors:
-  - EBADF
-  - EFAULT
-  - EIO
-  - EOVERFLOW
-profiles:
-  - fs

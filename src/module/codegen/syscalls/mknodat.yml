@@ -15,4 +15,3 @@ errors:
   - EFAULT
   - EINVAL
   - EBADF
-  - ENOTDIRC

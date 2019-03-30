@@ -1,6 +1,7 @@
 PACKAGE=krf
 FILESDIR=.
-SRCS	= krf.c config.c syscalls.c syscalls/chdir.gen.c
+BLA!=ls syscalls/*.c
+SRCS	= krf.c config.c ${BLA}  syscalls.c
 KMOD	= krf 
 CFLAGS+= -Wno-incompatible-function-pointer-types 
 

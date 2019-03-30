@@ -105,8 +105,6 @@ SYSCALLS.each do |call, spec|
     end
 
     file.puts <<~TRAILER
-      typedef int (*myfault)(KRF_SYS_PARMS);
-
       static  __typeof(sys_#{call})(*fault_table[]) = {
         #{fault_table.join ", "}
       };

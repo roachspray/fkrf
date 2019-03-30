@@ -1,5 +1,0 @@
-proto: struct thread *td, struct getrlimit_args *uap
-parms: td, uap
-errors:
-  - EFAULT
-  - EPERM
