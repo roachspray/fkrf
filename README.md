@@ -59,12 +59,12 @@ root use here :P):
 # kldload ./krf.ko
 # cd ../krfctl
 # make
-# ./krfctl chdir
+# ./krfctl -F chdir
 # cd ../krfexec
 # make
 # cd ../../examples
 # clang -o rep_chdir rep_chdir.c
-# ../src/krfexec/krfexec <syscallfromabove> ./rep_chdir
+# ../src/krfexec/krfexec <syscalloffaultable> ./rep_chdir
 ```
 
 
