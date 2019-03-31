@@ -30,12 +30,18 @@ control_file_sysctl(SYSCTL_HANDLER_ARGS)
 	int error = 0;
 
 	error = sysctl_handle_int(oidp, &syscall_num, 0, req);
-	if (error || !req->newptr) {
+	if (error) {
+		printf("krf: sysctl_handle_int() error\n");
+		return error;
+	}
+ 	if (!req->newptr) {
+		printf("krf: sysctl_handle_int() error: !req->newptr\n");
 		return error;
 	}
 
 	if (syscall_num > 0 && syscall_num < KRF_MAX_SYSCALL) {
 		if (krf_faultable_table[syscall_num].sy_call != NULL) {
+			printf("krf: faulting enabled for syscall %d\n", syscall_num);
 			sysent[syscall_num].sy_call = \
 			    krf_faultable_table[syscall_num].sy_call;
 		} else {
@@ -43,6 +49,7 @@ control_file_sysctl(SYSCTL_HANDLER_ARGS)
 			return EOPNOTSUPP;
 		}
 	} else if (syscall_num > KRF_MAX_SYSCALL) {
+		printf("krf: clearing all enabled faults\n");
 		krf_flush_table();
 	} else {
 		printf("krf: unsupported syscall\n");
@@ -129,13 +136,13 @@ kldload_entry(module_t mod, int cmd, void *arg)
         case MOD_LOAD:
 		error = krf_init();
 		if (error != 0) {
-			printf("krf FAILED to load\n");
+			printf("krf: Failed to load.\n");
 			load_fail = 1;
 		}
 
 #include "krf.gen.x"
 
-		printf("OK: krf loaded\n");
+		printf("krf: loaded\n");
                 break;
         case MOD_UNLOAD:
 		krf_teardown();
