@@ -26,26 +26,24 @@
 static int
 faultable(struct thread *td, void *arg)
 {
-	struct proc *p;
 	int error = 0;
-
 	struct faultable_args *uap = (struct faultable_args *)arg;
+	struct proc *p;
+
+	PROC_LOCK(td->td_proc);
+	p = td->td_proc;
+
 	if (uap->faultable == KRF_ENABLE) {
-                p = td->td_proc;
-		PROC_LOCK(p);
+		printf("krfsys: enabled for pid=%u\n", p->p_pid);
 		p->p_flag2 |= KRF_FAULTABLE_FLAG;
-		PROC_UNLOCK(p);
 	} if (uap->faultable == KRF_DISABLE) {
-                p = td->td_proc;
-		PROC_LOCK(p);
+		printf("krfsys: disabled for pid=%u\n", p->p_pid);
 		p->p_flag2 &= ~KRF_FAULTABLE_FLAG;
-		PROC_UNLOCK(p);
 	} else {
-                p = td->td_proc;
-		PROC_LOCK(p);
+		// Return current setting.
 		error = (p->p_flag2 & KRF_FAULTABLE_FLAG);
-		PROC_UNLOCK(p);
 	}
+	PROC_UNLOCK(p);
 		
 	return (error);
 }
@@ -137,7 +135,7 @@ load(struct module *module, int cmd, void *arg)
 		sysent[SYS_pdfork].sy_call = &hack_pdfork;
 		break;
 	case MOD_UNLOAD :
-		printf("krfsys: fultable() unloaded\n");
+		printf("krfsys: faultable() unloaded\n");
 		sysent[SYS_fork].sy_call = (sy_call_t *)&sys_fork;
 		sysent[SYS_rfork].sy_call = (sy_call_t *)&sys_rfork;
 		sysent[SYS_vfork].sy_call = (sy_call_t *)&sys_vfork;
