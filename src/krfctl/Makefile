@@ -3,11 +3,10 @@
 #
 
 
-
 all:
 	ruby gentable
 	ruby genprofiles
-	$(CC) -o krfctl krfctl.c table.gen.c profiles.gen.c
+	$(CC) -g -o krfctl krfctl.c table.gen.c profiles.gen.c
 
 clean:
 	rm -f krfctl

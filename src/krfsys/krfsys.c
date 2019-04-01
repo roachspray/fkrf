@@ -63,6 +63,7 @@ hack_fork(struct thread *td, void *arg)
 
 	err = sys_fork(td, uap);
 	if (err == 0) {
+		// pfind() returns with proc lock held.
 		struct proc *p = pfind(td->td_retval[0]);
 		p->p_flag2 |= (td->td_proc->p_flag2 & KRF_FAULTABLE_FLAG);
 		PROC_UNLOCK(p);

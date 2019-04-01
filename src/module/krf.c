@@ -22,7 +22,9 @@ static struct sysctl_oid *krf_sysctl_root;
 
 static unsigned  load_fail = 0;
 
-
+/*
+ * Handle the setting of faultable syscalls and clearing of them.
+ */
 static int
 control_file_sysctl(SYSCTL_HANDLER_ARGS)
 {
@@ -41,7 +43,9 @@ control_file_sysctl(SYSCTL_HANDLER_ARGS)
 
 	if (syscall_num > 0 && syscall_num < KRF_MAX_SYSCALL) {
 		if (krf_faultable_table[syscall_num].sy_call != NULL) {
-			printf("krf: faulting enabled for syscall %d\n", syscall_num);
+			printf("krf: faulting enabled for syscall %d\n",
+			    syscall_num);
+			// yolo
 			sysent[syscall_num].sy_call = \
 			    krf_faultable_table[syscall_num].sy_call;
 		} else {
@@ -89,7 +93,7 @@ krf_init(void)
 	    &krf_probability, krf_probability, "Set the probability of fault");
 
 	SYSCTL_ADD_PROC(&clist, SYSCTL_CHILDREN(krf_sysctl_root),
-	    OID_AUTO, "control_file", CTLTYPE_UINT | CTLFLAG_RW,
+	    OID_AUTO, "control_file", CTLTYPE_INT | CTLFLAG_RW,
 	    &krf_control, krf_control, control_file_sysctl, "I",
 	    "Enable different syscalls to fault with this");
 

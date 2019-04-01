@@ -11,14 +11,14 @@ main(int argc, char **argv)
 	for (; k != 0; --k) {
 		if (chdir(".") == -1) {
 			perror("chdir!");
-		}else {
+		} /*else {
 			printf("chidr: ok\n");
-		}
+		} */
 		if (chown(".", 0, 0) == -1) {
 			perror("chown!");
-		}else {
+		} /*else {
 			printf("chown: ok\n");
-		}
+		} */
 	}	
 	printf("we gone\n");
 	return 0;
