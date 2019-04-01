@@ -70,5 +70,14 @@ Try it out with a test case... configure chdir and chmod to be faultable
 # clang -o rep_chdir rep_chdir.c
 # ../src/krfctl/krfctl -F chdir,chown
 # ../src/krfexec/krfexec <syscalloffaultable> ./rep_chdir
+
+To clear the syscalls being intercepted:
+# ../src/krfctl/krfctl -c
 ```
 
+## To Do's
+
+- Add a read-only sysctl node, under kern., that reports the syscall number of the faultable() call.
+- Support more syscalls.
+- Reduce memory usage by not copying entire sysent table.
+- The sysent table replace is a bit unsafe
