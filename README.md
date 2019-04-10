@@ -2,6 +2,8 @@
 
 This is a (hacked up) port of [Trail of Bits'](https://www.trailofbits.com) 
 [krf](https://github.com/trailofbits/krf) utility from Linux to FreeBSD 12.
+This work was supported by [Veracode](https://www.veracode.com) where the
+author is a member of the Applied Research Group.
 
 All credit goes to ToB and [William Woodruff](https://github.com/woodruffw) for
 the design and development of the linux krf tool and for much of the code here
@@ -15,6 +17,14 @@ syscalls supported. Numerous of the YAML specs are filled out, but no where
 complete. Further, I have removed numerous specs I was not planning to 
 support...most of these are in the realm of security features such as MAC and
 Capabilities.
+
+**Note** This code is not intended to be used in production and likely 
+contains bugs that could be problematic from a stability and a security
+perspective. Take heed of this warning before utilizing this utility!
+
+**Note** The author will likely spend minimal time updating/improving/
+fixing any bugs, but is open to PRs. Especially for increased system 
+call coverage.
 
 
 ## Some Differences
